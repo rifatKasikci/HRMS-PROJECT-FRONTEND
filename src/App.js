@@ -10,7 +10,7 @@ function App() {
     <div className="App">
      <Navi/>
      <Container className="main">
-       <Dashboard/>
+      <Dashboard/>
      </Container>
      
      
