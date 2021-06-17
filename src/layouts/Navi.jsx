@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Button, Container, Menu } from "semantic-ui-react"
 
 export default function Navi() {
@@ -6,10 +7,10 @@ export default function Navi() {
         <div>
             <Menu inverted fixed="top">
         <Container>
-          <Menu.Item name="HRMS" />
-          <Menu.Item name="employers" />
-          <Menu.Item name="candidates" />
-          <Menu.Item name="job advertisements" />
+          <Menu.Item name="HRMS"/>
+          <Menu.Item name="employers" as={NavLink} to="/employers"/>
+          <Menu.Item name="candidates" as={NavLink} to="/candidates"/>
+          <Menu.Item name="job advertisements" as={NavLink} to="/jobAdvertisements"/>
           <Menu.Item name="my profile" />
 
           <Menu.Menu position="right">

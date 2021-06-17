@@ -1,5 +1,6 @@
 import React , {useState , useEffect} from 'react'
 import JobAdvertisementService from '../../services/jobAdvertisementService'
+import { Link } from "react-router-dom";
 import { Table } from 'semantic-ui-react'
 
 
@@ -9,7 +10,7 @@ export default function JobAdvertisementList() {
 
     useEffect(() => {
        let jobAdvertisementService = new JobAdvertisementService()
-       jobAdvertisementService.getJobAdvertisements().then(result=>setJobAdvertisements(result.data.data))
+       jobAdvertisementService.getJobAdvertisementsActiveTrue().then(result=>setJobAdvertisements(result.data.data))
        }, [])
     
     return (
@@ -33,7 +34,7 @@ export default function JobAdvertisementList() {
       {
           jobAdvertisements.map((jobAdvertisement) => (
           <Table.Row key={jobAdvertisement.id}>
-            <Table.Cell>{jobAdvertisement.employer.companyName}</Table.Cell>
+            <Table.Cell><Link to={`/jobAdvertisements/${jobAdvertisement.id}`}>{jobAdvertisement.employer.companyName}</Link></Table.Cell>
             <Table.Cell>{jobAdvertisement.description}</Table.Cell>
             <Table.Cell>{jobAdvertisement.jobPosition.positionName}</Table.Cell>
             <Table.Cell>{jobAdvertisement.numberOfOpenPostion}</Table.Cell>
