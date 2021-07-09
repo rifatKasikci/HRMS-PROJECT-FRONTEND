@@ -22,10 +22,10 @@ export default class JobAdvertisementService{
         return axios.post("http://localhost:8080/api/jobAdvertisement/add",values)
     }
 
+
     getJobAdvertisementsByActiveTrueAndFiltered(pageNo , pageSize , filterOptions){
         return axios.post(`http://localhost:8080/api/jobAdvertisement/findbyactivetrueandfiltered?pageNo=${pageNo}&pageSize=${pageSize}`,filterOptions)
     }
-
     
     
 
