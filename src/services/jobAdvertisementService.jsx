@@ -10,16 +10,20 @@ export default class JobAdvertisementService{
         return axios.get("http://localhost:8080/api/jobAdvertisement/getbyid?id=" + jobAdvertisementId)
     }
 
-    getJobAdvertisementsActiveTrue(){
-        return axios.get("http://localhost:8080/api/jobAdvertisement/getallbyactivetrue");
+    getJobAdvertisementsActiveTrue(pageNo , pageSize){
+        return axios.get(`http://localhost:8080/api/jobAdvertisement/getallbyactivetrue?pageNo=${pageNo}&pageSize=${pageSize}`);
     }
 
-    getUnapprovedAdvertisements(){
-        return axios.get("http://localhost:8080/api/jobAdvertisement/findunapprovedadvertisements")
+    getUnapprovedAdvertisements(pageNo , pageSize){
+        return axios.get(`http://localhost:8080/api/jobAdvertisement/findunapprovedadvertisements?pageNo=${pageNo}&pageSize=${pageSize}`)
     }
 
     addJobAdvertisement(values){
         return axios.post("http://localhost:8080/api/jobAdvertisement/add",values)
+    }
+
+    getJobAdvertisementsByActiveTrueAndFiltered(pageNo , pageSize , filterOptions){
+        return axios.post(`http://localhost:8080/api/jobAdvertisement/findbyactivetrueandfiltered?pageNo=${pageNo}&pageSize=${pageSize}`,filterOptions)
     }
 
     

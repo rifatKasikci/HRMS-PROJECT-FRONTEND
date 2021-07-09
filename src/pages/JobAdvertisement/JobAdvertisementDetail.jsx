@@ -1,7 +1,7 @@
 import React,{useState , useEffect} from 'react'
 import { useParams} from 'react-router-dom'
 import JobAdvertisementService from '../../services/jobAdvertisementService'
-import { Icon, Table,Checkbox } from 'semantic-ui-react'
+import { Icon, Table} from 'semantic-ui-react'
 
 export default function JobAdvertisementDetail() {
     

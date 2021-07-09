@@ -1,6 +1,5 @@
 import React from 'react'
-import { Card,Image } from 'semantic-ui-react'
-import { Button } from 'semantic-ui-react'
+import { Card} from 'semantic-ui-react'
 
 export default function UserCard() {
   return (
