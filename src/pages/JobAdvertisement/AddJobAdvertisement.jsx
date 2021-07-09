@@ -1,6 +1,5 @@
-import { Field, useFormik } from 'formik';
-import { result, values } from 'lodash';
-import { Dropdown, Form, Input, Label, TextArea, Button, Header, Icon, Image, Divider } from 'semantic-ui-react'
+import {useFormik } from 'formik';
+import { Dropdown, Form, Input, Label, TextArea, Button, Header, Icon, Divider } from 'semantic-ui-react'
 import React, { useState, useEffect } from 'react'
 import * as Yup from "yup";
 import JobAdvertisementService from '../../services/jobAdvertisementService'
@@ -56,7 +55,7 @@ export default function AddJobAdvertisement() {
             applicationDeadline: "",
             description: ""
         }, validationSchema: jobAdvertValidationScheme, onSubmit: (values) => {
-            values.employerId = 28
+            values.employerId = 36
             console.log(values)
             jobAdvertisementService.addJobAdvertisement(values).then((response) => console.log(response))
             setTimeout(() => {
@@ -332,7 +331,6 @@ export default function AddJobAdvertisement() {
                         value={formik.values.applicationDeadline}
                         placeholder="Application Deadline"
                         name = "applicationDeadline"
-                        name="applicationDeadline"
                     >
                     </Input>
                 </Form.Field>

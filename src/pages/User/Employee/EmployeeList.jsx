@@ -1,4 +1,4 @@
-import Reacti,{useState , useEffect} from 'react'
+import React,{useState , useEffect} from 'react'
 import { Table } from 'semantic-ui-react'
 import EmployeeService from '../../../services/employeeService'
 
