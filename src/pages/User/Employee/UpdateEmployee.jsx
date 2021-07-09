@@ -32,7 +32,7 @@ export default function UpdateEmployee({employee}) {
                 validationSchema={schema}
                 onSubmit={(values) => {
                     console.log(values)
-                    //employeeService.update(values).then((response) => (console.log(response)))
+                    employeeService.update(values).then((response) => (console.log(response)))
                 }}
             >
 
